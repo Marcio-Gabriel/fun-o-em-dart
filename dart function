@@ -1,0 +1,39 @@
+import 'dart:io';
+
+void main() {
+  abastecer();
+  
+  
+}
+
+void abastecer(){
+  double gas;
+  double etanol;
+
+  stdout.write("Digite o preço da gasolina: ");
+  gas = double.parse(stdin.readLineSync()!);
+
+  stdout.write("Digite o preço do etanol: ");
+  etanol = double.parse(stdin.readLineSync()!);
+
+  double resultado = calculo(gas, etanol);
+  bestforuse(resultado);
+}
+
+double calculo(gas, etanol){
+  
+  double result = etanol / gas;
+  return result;
+  
+}
+
+
+void bestforuse(double result){
+    if (result <= 0.70){
+      print("Melhor abastecer com etanol.");
+    }else{
+      print("Melhor abastecer com gasolina");
+    }
+}
+
+
